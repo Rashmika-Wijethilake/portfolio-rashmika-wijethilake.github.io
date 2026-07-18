@@ -220,6 +220,152 @@
   background:rgba(0,0,0,.55);color:#fff;
   display:flex;align-items:center;justify-content:center;font-size:1rem;
 }
+ /* ===== PROJECTS SECTION ===== */
+.proj-section {
+  padding-block: 4rem 6rem;
+}
+.proj-container {
+  width: min(100% - 2rem, 1180px);
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+.proj-eyebrow {
+  display: inline-flex;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(210, 92, 154, 0.11);
+  color: #d25c9a;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.75rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+.proj-title {
+  font-family: "Cabinet Grotesk", "Satoshi", sans-serif;
+  font-size: clamp(1.65rem, 1.2rem + 1vw, 2.4rem);
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+}
+.proj-lead {
+  color: #715c7a;
+  max-width: 60ch;
+  margin-bottom: 2.5rem;
+}
+.proj-subtitle {
+  font-family: "Cabinet Grotesk", "Satoshi", sans-serif;
+  font-size: 1.15rem;
+  margin: 0 0 1.1rem;
+}
+.proj-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+.proj-card {
+  background: #fff;
+  border: 1px solid rgba(115, 78, 108, 0.14);
+  border-radius: 1.2rem;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(78, 39, 89, 0.08);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.proj-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(78, 39, 89, 0.14);
+}
+.proj-card-img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  display: block;
+}
+.proj-card-body {
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.proj-card-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.6rem;
+  align-items: flex-start;
+  margin-bottom: 0.6rem;
+}
+.proj-card-title {
+  font-family: "Cabinet Grotesk", "Satoshi", sans-serif;
+  font-size: 1.05rem;
+  margin: 0;
+}
+.proj-badge {
+  padding: 0.3rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(210, 92, 154, 0.11);
+  color: #d25c9a;
+  font-size: 0.72rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+.proj-desc {
+  color: #715c7a;
+  font-size: 0.9rem;
+  margin-bottom: 0.9rem;
+  flex-grow: 1;
+}
+.proj-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.proj-tag {
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid rgba(115, 78, 108, 0.14);
+  color: #715c7a;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.proj-media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+}
+.proj-media-tile {
+  margin: 0;
+  border: 1px solid rgba(115, 78, 108, 0.14);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(78, 39, 89, 0.08);
+  background: #fff;
+}
+.proj-media-tile img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  display: block;
+}
+.proj-media-tile figcaption {
+  padding: 0.6rem 0.8rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #715c7a;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 900px) {
+  .proj-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .proj-media-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 560px) {
+  .proj-grid { grid-template-columns: 1fr; }
+  .proj-media-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+    
 
 @media (max-width:900px){
   .projects-balanced{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -454,171 +600,149 @@
       </div>
     </section>
 
-    <section class="section" id="projects">
-  <div class="container reveal">
-    <span class="eyebrow">Selected work</span>
-    <h2 class="section-title">Project highlights.</h2>
-    <p class="section-lead">A collection of my web systems, graphic design work, and video editing projects.</p>
+<section id="projects" class="proj-section">
+  <div class="proj-container">
 
-    <!-- WEB SYSTEMS: INDIVIDUAL -->
-    <h3 class="subgroup-title">Web Projects — Individual</h3>
-    <div class="projects-balanced">
+    <span class="proj-eyebrow">Selected work</span>
+    <h2 class="proj-title">Project highlights</h2>
+    <p class="proj-lead">A collection of my web systems, graphic design work, and video editing projects.</p>
 
-      <article class="project-card">
-        <img class="project-img" src="./resources/Routine Assistant.png" alt="Routine Assistant desktop app preview" width="1200" height="800" loading="lazy" />
-        <div class="project-body">
-          <div class="project-top">
-            <h3 class="project-title">Routine Assistant</h3>
-            <span class="project-badge">Desktop App · Python</span>
+    <h3 class="proj-subtitle">Web Projects — Individual</h3>
+    <div class="proj-grid">
+
+      <article class="proj-card">
+        <img class="proj-card-img" src="./resources/Routine Assistant.png" alt="Routine Assistant desktop app preview" width="1200" height="800" loading="lazy" />
+        <div class="proj-card-body">
+          <div class="proj-card-top">
+            <h3 class="proj-card-title">Routine Assistant</h3>
+            <span class="proj-badge">Desktop App</span>
           </div>
-          <p class="project-desc">A Python desktop application that helps manage daily routines, reminders, and productivity tracking.</p>
-          <div class="project-tags">
-            <span class="project-tag">Python</span>
-            <span class="project-tag">Desktop App</span>
+          <p class="proj-desc">A Python desktop application that helps manage daily routines, reminders, and productivity tracking.</p>
+          <div class="proj-tags">
+            <span class="proj-tag">Python</span>
+            <span class="proj-tag">Desktop App</span>
           </div>
         </div>
       </article>
 
-      <article class="project-card">
-        <img class="project-img" src="./resources/ABC Agency 1.png" alt="ABC Agency website preview" width="1200" height="800" loading="lazy" />
-        <img class="project-img" src="./resources/ABC Agency 2.png" alt="ABC Agency website preview" width="1200" height="800" loading="lazy" />
-        <img class="project-img" src="./resources/ABC Agency 3.png" alt="ABC Agency website preview" width="1200" height="800" loading="lazy" />
-        <div class="project-body">
-          <div class="project-top">
-            <h3 class="project-title">ABC Agency</h3>
-            <span class="project-badge">Web App</span>
+      <article class="proj-card">
+        <img class="proj-card-img" src="./resources/ABC Agency 1.png" alt="ABC Agency website preview" width="1200" height="800" loading="lazy" />
+        <div class="proj-card-body">
+          <div class="proj-card-top">
+            <h3 class="proj-card-title">ABC Agency</h3>
+            <span class="proj-badge">Web App</span>
           </div>
-          <p class="project-desc">A business/agency website built with a modern responsive layout and clean navigation.</p>
-          <div class="project-tags">
-            <span class="project-tag">React</span>
-            <span class="project-tag">Business Site</span>
+          <p class="proj-desc">A business/agency website built with a modern responsive layout and clean navigation.</p>
+          <div class="proj-tags">
+            <span class="proj-tag">React</span>
+            <span class="proj-tag">Business Site</span>
           </div>
         </div>
       </article>
 
-      <article class="project-card">
-        <img class="project-img" src="./resources/ToDo App.png" alt="ToDo app preview" width="1200" height="800" loading="lazy" />
-        <div class="project-body">
-          <div class="project-top">
-            <h3 class="project-title">Simple To Do App</h3>
-            <span class="project-badge">Web App</span>
+      <article class="proj-card">
+        <img class="proj-card-img" src="./resources/ToDo App.png" alt="ToDo app preview" width="1200" height="800" loading="lazy" />
+        <div class="proj-card-body">
+          <div class="proj-card-top">
+            <h3 class="proj-card-title">Simple To Do App</h3>
+            <span class="proj-badge">Web App</span>
           </div>
-          <p class="project-desc">Lightweight task manager with filtering, status tracking, and clean UX for daily planning.</p>
-          <div class="project-tags">
-            <span class="project-tag">React</span>
-            <span class="project-tag">Node.js</span>
-          </div>
-        </div>
-      </article>
-
-      <article class="project-card">
-        <img class="project-img" src="./resources/sms 1.png" alt="School Management System group project preview" width="1200" height="800" loading="lazy" />
-        <img class="project-img" src="./resources/sms2.png" alt="School Management System group project preview" width="1200" height="800" loading="lazy" />
-        <div class="project-body">
-          <div class="project-top">
-            <h3 class="project-title">School Management System</h3>
-            <span class="project-badge">Group Project · Featured</span>
-          </div>
-          <p class="project-desc">Full-stack platform with role-based access for Admin, Teacher, Student, and Parent users.</p>
-          <div class="project-tags">
-            <span class="project-tag">MERN Stack</span>
-            <span class="project-tag">RBAC</span>
-            <span class="project-tag">JWT</span>
+          <p class="proj-desc">Lightweight task manager with filtering, status tracking, and clean UX for daily planning.</p>
+          <div class="proj-tags">
+            <span class="proj-tag">React</span>
+            <span class="proj-tag">Node.js</span>
           </div>
         </div>
       </article>
 
-      <article class="project-card">
-        <img class="project-img" src="./resources/erats technologies 1.png" alt="Erats Technologies Company website" width="1200" height="800" loading="lazy" />
-        <img class="project-img" src="./resources/erats technologies 2.png" alt="Erats Technologies Company website" width="1200" height="800" loading="lazy" />
-        <div class="project-body">
-          <div class="project-top">
-            <h3 class="project-title">Erats Technologies Company website</h3>
-            <span class="project-badge">Group Project · Featured</span>
+      <article class="proj-card">
+        <img class="proj-card-img" src="./resources/sms 1.png" alt="School Management System preview" width="1200" height="800" loading="lazy" />
+        <div class="proj-card-body">
+          <div class="proj-card-top">
+            <h3 class="proj-card-title">School Management System</h3>
+            <span class="proj-badge">Featured</span>
           </div>
-          <p class="project-desc">Erats Technologies Company website</p>
-          <div class="project-tags">
-            <span class="project-tag">Wordpress</span>
+          <p class="proj-desc">Full-stack platform with role-based access for Admin, Teacher, Student, and Parent users.</p>
+          <div class="proj-tags">
+            <span class="proj-tag">MERN</span>
+            <span class="proj-tag">RBAC</span>
+            <span class="proj-tag">JWT</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj-card">
+        <img class="proj-card-img" src="./resources/erats technologies 1.png" alt="Erats Technologies website preview" width="1200" height="800" loading="lazy" />
+        <div class="proj-card-body">
+          <div class="proj-card-top">
+            <h3 class="proj-card-title">Erats Technologies</h3>
+            <span class="proj-badge">Featured</span>
+          </div>
+          <p class="proj-desc">Company website built for Erats Technologies.</p>
+          <div class="proj-tags">
+            <span class="proj-tag">WordPress</span>
           </div>
         </div>
       </article>
 
     </div>
 
-    <!-- WEB SYSTEMS: GROUP -->
-    <h3 class="subgroup-title">Web Projects — Group</h3>
-    <div class="projects-balanced">
+    <h3 class="proj-subtitle">Web Projects — Group</h3>
+    <div class="proj-grid">
 
-      <!-- <article class="project-card">
-        <img class="project-img" src="./projects/travel-site.jpg" alt="Travelling site group project preview" width="1200" height="800" loading="lazy" />
-        <div class="project-body">
-          <div class="project-top">
-            <h3 class="project-title">Travelling Site</h3>
-            <span class="project-badge">Group Project</span>
+      <article class="proj-card">
+        <img class="proj-card-img" src="./resources/koops 1.png" alt="Technology Enhanced Learning System preview" width="1200" height="800" loading="lazy" />
+        <div class="proj-card-body">
+          <div class="proj-card-top">
+            <h3 class="proj-card-title">Technology Enhanced Learning System</h3>
+            <span class="proj-badge">Web App</span>
           </div>
-          <p class="project-desc">A travel booking and destination exploration website built collaboratively with a team.</p>
-          <div class="project-tags">
-            <span class="project-tag">Team Project</span>
-            <span class="project-tag">Web Development</span>
-          </div>
-        </div>
-      </article> -->
-
-      <article class="project-card">
-        <img class="project-img" src="./resources/koops 1.png" alt="Video co app preview" width="1200" height="800" loading="lazy" />
-        <img class="project-img" src="./resources/koops 2.png" alt="Video co app preview" width="1200" height="800" loading="lazy" />
-        <div class="project-body">
-          <div class="project-top">
-            <h3 class="project-title">Technology Enhanced Learning System </h3>
-            <span class="project-badge">Web App</span>
-          </div>
-          <p class="project-desc">he system to be developed is for university students, to perform their education activities.</p>
-          <div class="project-tags">
-            <span class="project-tag">MERN Stack</span>
-            <span class="project-tag">Media</span>
+          <p class="proj-desc">A system built for university students to perform their education activities.</p>
+          <div class="proj-tags">
+            <span class="proj-tag">MERN</span>
+            <span class="proj-tag">Media</span>
           </div>
         </div>
       </article>
 
     </div>
 
-    <!-- GRAPHIC DESIGN -->
-    <h3 class="subgroup-title">Design</h3>
-    <div class="media-grid">
-      <figure class="media-tile">
-        <img src="./resources/Tropical Breeze.jpg" alt="Logo design - Tropical Breeze " width="400" height="400" loading="lazy" />
-        <figcaption>Logo design - Tropical Breeze</figcaption>
+    <h3 class="proj-subtitle">Design</h3>
+    <div class="proj-media-grid">
+      <figure class="proj-media-tile">
+        <img src="./resources/Tropical Breeze.jpg" alt="Tropical Breeze logo design" width="400" height="400" loading="lazy" />
+        <figcaption>Tropical Breeze</figcaption>
       </figure>
-      <figure class="media-tile">
-        <img src="./resources/assignment space.png" alt="Flyer design sample" width="400" height="400" loading="lazy" />
-        <figcaption>Logo design - Assignment Space</figcaption>
+      <figure class="proj-media-tile">
+        <img src="./resources/assignment space.png" alt="Assignment Space logo design" width="400" height="400" loading="lazy" />
+        <figcaption>Assignment Space</figcaption>
       </figure>
-      <figure class="media-tile">
-        <img src="./resources/inst tchnologies.png" alt="Poster design sample" width="400" height="400" loading="lazy" />
-        <figcaption>Logo design - Inst tchnologies</figcaption>
+      <figure class="proj-media-tile">
+        <img src="./resources/inst tchnologies.png" alt="Inst Technologies logo design" width="400" height="400" loading="lazy" />
+        <figcaption>Inst Technologies</figcaption>
       </figure>
-      <figure class="media-tile">
-        <img src="./resources/melytechspace.png" alt="Logo design sample 2" width="400" height="400" loading="lazy" />
-        <figcaption>Logo design - mely tech space </figcaption>
+      <figure class="proj-media-tile">
+        <img src="./resources/melytechspace.png" alt="Mely Tech Space logo design" width="400" height="400" loading="lazy" />
+        <figcaption>Mely Tech Space</figcaption>
       </figure>
-            <figure class="media-tile">
-        <img src="./resources/Sara Beauty salon.png" alt="Logo design sample 1" width="400" height="400" loading="lazy" />
-        <figcaption>Poster Design - Sara Beauty salon</figcaption>
+      <figure class="proj-media-tile">
+        <img src="./resources/Sara Beauty salon.png" alt="Sara Beauty Salon poster design" width="400" height="400" loading="lazy" />
+        <figcaption>Sara Beauty Salon</figcaption>
       </figure>
-      <figure class="media-tile">
-        <img src="./resources/echo tech base.png" alt="Flyer design sample" width="400" height="400" loading="lazy" />
-        <figcaption>Flyer Design - Eco Tech Base</figcaption>
+      <figure class="proj-media-tile">
+        <img src="./resources/echo tech base.png" alt="Eco Tech Base flyer design" width="400" height="400" loading="lazy" />
+        <figcaption>Eco Tech Base</figcaption>
       </figure>
-      <figure class="media-tile">
-        <img src="./resources/UI UX Design.png" alt="Poster design sample" width="400" height="400" loading="lazy" />
-        <figcaption>UI UX Design- Technology Enhanced Learning System for Dynamic Learning</figcaption>
+      <figure class="proj-media-tile">
+        <img src="./resources/UI UX Design.png" alt="UI UX Design poster" width="400" height="400" loading="lazy" />
+        <figcaption>UI/UX — Learning System</figcaption>
       </figure>
-
-    </div>
     </div>
 
   </div>
 </section>
+
+    
     <section class="section" id="skills">
       <div class="container section-box reveal">
         <span class="eyebrow">Skills</span>
